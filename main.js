@@ -8,9 +8,9 @@ function loadPlayer() {
     console.log('player loaded')
     if (player) player.destroy()
     player = new YT.Player('player', {
-        height: '400px',
+        height: '100%',
         width: '100%',
-        videoId: 'dQw4w9WgXcQ',
+        videoId: 'PLYmIdyBj4MvGzOo3j76rY2HYRRixo_5uZ',
         playerVars: {
             'autoplay': 0,
             'controls': + app.cfg.showControls
