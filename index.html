@@ -18,7 +18,7 @@
 	<div class="container" id="app" :class="{'dark': cfg.darkTheme}">
     	<div class="middle">
 			<div class="bigline">
-				<span class="logo">YouTube Playlist Randomizer</span>
+				<span class="logo">YouTube Playlist</span>
 			</div>
     		<div class="bigline" v-show="tab == 1">
 				<input type="text" v-model="cfg.playlistURL" placeholder="YouTube Playlist Link" id="link" @keyup.Enter="okClicked" :disabled="!status.playerReady"> <button id="ok" @click="okClicked" :disabled="!status.playerReady">OK</button>
@@ -65,15 +65,10 @@
 						<input type="checkbox" id="i6" v-model="cfg.darkTheme" @change="saveConfig">
 						<label for="i6">Dark theme</label>
 					</span>
-				</div>
-				<div class="mt20 spoiler">❓<br></div>
-				<div v-cloak v-if='!cfg.saveSeed' class="info info-zero info-warn">Random seed might give you more repetitions than the same seed with saved position</div>
-				<div v-cloak v-if='cfg.saveSeed && !cfg.savePos' class="info info-zero info-warn">You will get the same order after every page refresh, if you're not saving the position</div>
-			</div>
-			<div id="activePlaylist" v-show="tab == 2" v-cloak>
-				<div>Current playlist: {{playlistIDShort}} ({{cfg.videos}} videos) <button type="button" id="editBtn" name="button" @click="editPlaylist">Edit</button></div>
-				<div>Seed: {{cfg.seed}} | Position: {{cfg.pos+1}}/{{cfg.videos}} | Completions: {{cfg.lap}}</div>
-				<div>Video Title: {{videoTitle}}</div>
+				</div></div>
+			<div id="activePlaylist" v-show="tab == 2" v-cloak style="font-size: xx-large;">
+				<div>{{videoTitle}}</div>
+				<div>{{author}}</div>
 			</div>
 			<div class="mt20 controls" v-show="tab == 2" v-cloak>
 				<button @click="playPrevVideo" :disabled="cfg.pos == 0" title="⏮" style="width: 10vh; height: 10vh;">
@@ -94,6 +89,8 @@
 			</div>
 			<div class="playerwrap" v-show="tab == 2">
 				<div id="player"></div>
+				<div>Current playlist: {{playlistIDShort}} ({{cfg.videos}} videos) <button type="button" id="editBtn" name="button" @click="editPlaylist">Edit</button></div>
+				<div>Seed: {{cfg.seed}} | Position: {{cfg.pos+1}}/{{cfg.videos}} | Completions: {{cfg.lap}}</div>
 			</div>
     	</div>
 		<div id="eg" title="eg?"></div>
