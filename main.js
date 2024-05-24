@@ -83,7 +83,7 @@ function displayVideoTitle() {
 var app = new Vue({  
     'el': '#app',  
     'data': {  
-        'tab': 2,  
+        'tab': 1,  
         'lastPlayerPos': 0,  
         'freezeunstart': true,  
         'videoTitle': '',
