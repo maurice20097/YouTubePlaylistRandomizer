@@ -77,6 +77,7 @@ function onPlayerStateChange(event) {
 function displayVideoTitle() {  
     const videoData = player.getVideoData();  
     app.videoTitle = videoData.title;
+    app.author = videoData.author;
     console.log('Video Title:', app.videoTitle);  
 }  
   
@@ -87,6 +88,7 @@ var app = new Vue({
         'lastPlayerPos': 0,  
         'freezeunstart': true,  
         'videoTitle': '',
+        'author': '',
         'initcfg': function() {  
             return {  
                 'rng': 3,  
