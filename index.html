@@ -74,10 +74,6 @@
 				<div>Current playlist: {{playlistIDShort}} ({{cfg.videos}} videos) <button type="button" id="editBtn" name="button" @click="editPlaylist">Edit</button></div>
 				<div>Seed: {{cfg.seed}} | Position: {{cfg.pos+1}}/{{cfg.videos}} | Completions: {{cfg.lap}}</div>
 			</div>
-			<div id="activePlaylist" v-show="tab == 2" v-cloak>
-				<div>Current playlist: {{playlistIDShort}} ({{cfg.videos}} videos) <button type="button" id="editBtn" name="button" @click="editPlaylist">Edit</button></div>
-				<div>Seed: {{cfg.seed}} | Position: {{cfg.pos+1}}/{{cfg.videos}} | Completions: {{cfg.lap}}</div>
-			</div>
 			<div class="mt20 controls" v-show="tab == 2" v-cloak>
 				<button @click="playPrevVideo" :disabled="cfg.pos == 0" title="⏮" style="width: 10vh; height: 10vh;">
 					<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" fill="none" viewBox="0 0 24 24">
