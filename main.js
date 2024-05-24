@@ -77,7 +77,7 @@ function onPlayerStateChange(event) {
 function displayVideoTitle() {  
     const videoData = player.getVideoData();  
     app.videoTitle = videoData.title;
-    console.log('Video Title:', videoTitle);  
+    console.log('Video Title:', app.videoTitle);  
 }  
   
 var app = new Vue({  
