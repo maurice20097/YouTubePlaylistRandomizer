@@ -52,7 +52,6 @@ function onPlayerReady(event) {
 
 function onPlayerStateChange(event) {
     switch (event.data) {
-        console.log(event.data);
         case YT.PlayerState.UNSTARTED:
             if (app.lastPlayerPos === player.getPlaylistIndex() || app.freezeunstart)
                 break
