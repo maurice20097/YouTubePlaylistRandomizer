@@ -76,7 +76,8 @@ function onPlayerStateChange(event) {
   
 function displayVideoTitle() {  
     const videoData = player.getVideoData();  
-    console.log('Video Title:', videoData.title);  
+    app.videoTitle = videoData.title;
+    console.log('Video Title:', videoTitle);  
 }  
   
 var app = new Vue({  
@@ -85,6 +86,7 @@ var app = new Vue({
         'tab': 2,  
         'lastPlayerPos': 0,  
         'freezeunstart': true,  
+        'videoTitle': '',
         'initcfg': function() {  
             return {  
                 'rng': 3,  
